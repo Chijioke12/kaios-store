@@ -1,0 +1,6 @@
+{
+  "name": "Vanilla JS Sandbox",
+  "description": "A high-performance vanilla JavaScript development environment running on Vite with clean custom typography and dark styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

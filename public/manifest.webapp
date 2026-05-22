@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "name": "KaiOS Store",
+  "description": "A curated directory of optimized web apps and HTML5 games for KaiOS.",
+  "type": "privileged",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/icon-56.png",
+    "112": "/icon-112.png"
+  },
+  "developer": {
+    "name": "Your Name/Studio",
+    "url": "https://your-portfolio-url.com"
+  },
+  "locales": {
+    "en-US": {
+      "name": "KaiOS Store",
+      "subtitle": "Discover Apps & Games",
+      "description": "A curated directory of optimized web apps and HTML5 games for KaiOS."
+    }
+  },
+  "default_locale": "en-US",
+  "permissions": {
+    "browser": {
+      "description": "Required to render third-party web apps and games inside the application via mozbrowser iframes."
+    },
+    "systemXHR": {
+      "description": "Required to fetch the latest directory list from the external Firebase database."
+    },
+    "spatialnavigation-app-manage": {
+      "description": "Required to intercept hardware keys and manage custom D-pad focus routing."
+    }
+  },
+  "theme_color": "#2c3e50",
+  "background_color": "#f4f4f4",
+  "fullscreen": true,
+  "cursor": false
+}
