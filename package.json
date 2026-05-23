@@ -19,8 +19,5 @@
     "jszip": "^3.10.1",
     "terser": "^5.48.0",
     "vite": "^6.2.3"
-  },
-  "dependencies": {
-    "canvas": "^3.2.3"
   }
 }
