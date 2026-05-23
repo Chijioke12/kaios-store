@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KaiOS Store</title>
+    <script>
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            var string = msg.toLowerCase();
+            var substring = "script error";
+            if (string.indexOf(substring) > -1){
+                alert('Script Error: See Browser Console for Detail');
+            } else {
+                var message = [
+                    'Message: ' + msg,
+                    'URL: ' + url,
+                    'Line: ' + lineNo,
+                    'Column: ' + columnNo,
+                    'Error object: ' + JSON.stringify(error)
+                ].join(' - ');
+                alert(message);
+            }
+            return false;
+        };
+        window.onload = function() {
+            var root = document.getElementById('app-root');
+            if (root && root.innerHTML.trim() === '') {
+                root.innerHTML = '<div style="padding: 20px; text-align: center; color: red;">JS Loaded, but app did not render.</div>';
+            }
+        };
+    </script>
     <style>
         /* KaiOS Reset & Typography */
         * { box-sizing: border-box; }

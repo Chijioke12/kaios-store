@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
+  base: './',
   plugins: [
     legacy({
       targets: ['Firefox >= 48', 'Chrome >= 53'], // KaiOS 2.5 is based on Firefox 48
