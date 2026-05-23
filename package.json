@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node generate-icons.cjs && vite --port=3000 --host=0.0.0.0",
-    "build": "node generate-icons.cjs && vite build && node build-omnisd.cjs",
+    "build": "node generate-icons.cjs && vite build && node extract.js && node build-omnisd.cjs",
     "omnisd": "npm run build",
     "preview": "vite preview --port=3000 --host=0.0.0.0",
     "clean": "rm -rf dist",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@vitejs/plugin-legacy": "^6.1.1",
     "archiver": "^8.0.0",
+    "cheerio": "^1.2.0",
     "imagemagick": "^0.1.3",
     "jszip": "^3.10.1",
     "terser": "^5.48.0",
