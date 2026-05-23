@@ -21,9 +21,18 @@ export function separateJsFromHtml(inputHtmlPath, outputHtmlPath) {
         const $ = load(htmlContent);
 
         // 3. Find all script tags WITHOUT a 'src' attribute (inline scripts)
+        $('script').removeAttr('crossorigin');
         $('script:not([src])').each((index, element) => {
-            const scriptContent = $(element).html().trim();
+            let scriptContent = $(element).html().trim();
             if (!scriptContent) return;
+
+            // Add error handling to System.import
+            if (scriptContent.includes('System.import')) {
+                scriptContent = scriptContent.replace(
+                    /System\.import\((.*)\)/,
+                    "System.import($1).catch(function(err) { alert('System.import Error: ' + err.message + '\\n' + err.stack); })"
+                );
+            }
 
             const jsFileName = `inline-script-${index}.js`;
             const absoluteJsPath = path.join(path.dirname(outputHtmlPath), jsFileName);
