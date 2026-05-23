@@ -292,4 +292,8 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-window.onload = () => { fetchDirectory(); };
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', () => { fetchDirectory(); });
+} else {
+    fetchDirectory();
+}

@@ -26,14 +26,6 @@ export function separateJsFromHtml(inputHtmlPath, outputHtmlPath) {
             let scriptContent = $(element).html().trim();
             if (!scriptContent) return;
 
-            // Add error handling to System.import
-            if (scriptContent.includes('System.import')) {
-                scriptContent = scriptContent.replace(
-                    /System\.import\((.*)\)/,
-                    "System.import($1).catch(function(err) { alert('System.import Error: ' + err.message + '\\n' + err.stack); })"
-                );
-            }
-
             const jsFileName = `inline-script-${index}.js`;
             const absoluteJsPath = path.join(path.dirname(outputHtmlPath), jsFileName);
             
